@@ -1,0 +1,10 @@
+1 // K
+69000 // nSearch
+1000 // qN
+2048 // construct_fg_M
+1024 // load_fg_M
+64 // load_front_M
+1024 // ingraph_num_node
+64 // ingraph_M
+0.52 // threshold
+2048 // s_size

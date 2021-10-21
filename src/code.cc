@@ -1,12 +1,9 @@
 #define OMD (56)
 #include "libs.hh"
-#include "lib/ip-nsw/hnswlib.h"
-#include "lib/kxsort.h"
 #include "evaluator.cc"
 #include "search/graph.cc"
 #include "search/base.cc"
 #include "search/graphSearch.cc"
-#include "search/hnswSearch.cc"
 #include "search/tjSearch.cc"
 #include "search/streamTracker.cc"
 #include "search/yjSearch.cc"
@@ -104,7 +101,7 @@ int main (int argc, char** argv) {
   }
 
   GraphSearch gs("GS", K, nSearch);
-  HnswSearch hnswgs("HNSW", K, nSearch);
+  // HnswSearch hnswgs("HNSW", K, nSearch);
   // GraphSearchYJBase gsyjb1("GSYJBase1", K, nSearch, load_front_M, 192, 256);
   GraphSearchFinal gsf1("GSF1", K, nSearch, load_front_M);
   GraphSearchYJBase* gsyjb1[qN];
@@ -128,8 +125,8 @@ int main (int argc, char** argv) {
       manager.objs_register_for_query_level_par(gsyjb1[i]);
     }
   }
-  else if(data_mode.find("-hl") != string::npos)
-    manager.objs_register(1, &hnswgs);
+  // else if(data_mode.find("-hl") != string::npos)
+  //   manager.objs_register(1, &hnswgs);
 
   vector<vector<int>> fg;
   vector<vector<int>> graph;
@@ -226,9 +223,9 @@ int main (int argc, char** argv) {
       gsyjb1[i]->in_graph = &ig;
     }
   }
-  else if (data_mode.find("-hl") != string::npos) {
-    hnswgs.hnswg = GraphConstruct::load_hnsw(manager.dm->get_path("HNSW"));
-  }
+  // else if (data_mode.find("-hl") != string::npos) {
+  //   hnswgs.hnswg = GraphConstruct::load_hnsw(manager.dm->get_path("HNSW"));
+  // }
   #ifdef CACHE
   system("sync; echo 1 > /proc/sys/vm/drop_caches");
   cout << "Cache cleared.\n";

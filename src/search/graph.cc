@@ -463,34 +463,34 @@ public:
 
   
 
-  static hnswlib::HierarchicalNSW<float>* construct_hnsw() {
-    cout << "HNSW Graph Generation Start.\n";
-    hnswlib::L2Space l2space(D); //L2Space -> Actually it's Innerproduct
-    hnswlib::HierarchicalNSW<float> *hnswg;
-    hnswg = new hnswlib::HierarchicalNSW<float>(&l2space, N, 32, 1024);
-    for (int i = 0; i<1; i++)
-      hnswg->addPoint((void *)(data[i]), (size_t)i);
-    #pragma omp parallel for
-    for (int i = 1; i<N; i++)
-      hnswg->addPoint((void *)(data[i]), (size_t)i);
-    cout << "HNSW Graph Generation Complete.\n";
-    return hnswg;
-  }
+  // static hnswlib::HierarchicalNSW<float>* construct_hnsw() {
+  //   cout << "HNSW Graph Generation Start.\n";
+  //   hnswlib::L2Space l2space(D); //L2Space -> Actually it's Innerproduct
+  //   hnswlib::HierarchicalNSW<float> *hnswg;
+  //   hnswg = new hnswlib::HierarchicalNSW<float>(&l2space, N, 32, 1024);
+  //   for (int i = 0; i<1; i++)
+  //     hnswg->addPoint((void *)(data[i]), (size_t)i);
+  //   #pragma omp parallel for
+  //   for (int i = 1; i<N; i++)
+  //     hnswg->addPoint((void *)(data[i]), (size_t)i);
+  //   cout << "HNSW Graph Generation Complete.\n";
+  //   return hnswg;
+  // }
 
-  static void save_hnsw(hnswlib::HierarchicalNSW<float>* hnswg, string path) {
-    hnswg->SaveIndex(path);
-  }
+  // static void save_hnsw(hnswlib::HierarchicalNSW<float>* hnswg, string path) {
+  //   hnswg->SaveIndex(path);
+  // }
 
-  static hnswlib::HierarchicalNSW<float>* load_hnsw(string path) {
-    hnswlib::L2Space l2space(D);
-    hnswlib::HierarchicalNSW<float>* hnswg;
-    hnswg = new hnswlib::HierarchicalNSW<float>(&l2space, path, false);
-    #ifdef CACHE
-    system("sync; echo 1 > /proc/sys/vm/drop_caches");
-    cout << "Cache cleared.\n";
-    #endif
-    return hnswg;
-  }
+  // static hnswlib::HierarchicalNSW<float>* load_hnsw(string path) {
+  //   hnswlib::L2Space l2space(D);
+  //   hnswlib::HierarchicalNSW<float>* hnswg;
+  //   hnswg = new hnswlib::HierarchicalNSW<float>(&l2space, path, false);
+  //   #ifdef CACHE
+  //   system("sync; echo 1 > /proc/sys/vm/drop_caches");
+  //   cout << "Cache cleared.\n";
+  //   #endif
+  //   return hnswg;
+  // }
 
   static void save_graph (int M, vector<vector<int>>& graph, string path) {
     ofstream ofile = IOManager::save_head(path, graph.size(), D, 1, M);

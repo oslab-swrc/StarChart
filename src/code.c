@@ -1,15 +1,15 @@
+// SPDX-FileCopyrightText: Copyright Copyright 2021 Seoul National University
+//
+// SPDX-License-Identifier: MIT License
 #define OMD (56)
 #include "libs.hh"
-#include "evaluator.cc"
-#include "search/graph.cc"
-#include "search/base.cc"
-#include "search/graphSearch.cc"
-#include "search/streamTracker.cc"
-#include "search/yjSearch.cc"
-#include "manager.cc"
-#ifdef FALCONN
-#include "search/falconnSearch.cc"
-#endif
+#include "evaluator.c"
+#include "search/graph.c"
+#include "search/base.c"
+#include "search/graphSearch.c"
+#include "search/streamTracker.c"
+#include "search/yjSearch.c"
+#include "manager.c"
 
 void parse_and_save(string data_path, int N, int D, int partitionNum) {
   fstream gfile;

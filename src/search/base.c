@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: Copyright Copyright 2021 Seoul National University
+//
+// SPDX-License-Identifier: MIT License
+
 class BaseSearch {
 public:
   static float **data;

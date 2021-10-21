@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: Copyright Copyright 2021 Seoul National University
+//
+// SPDX-License-Identifier: MIT License
 using Clock=::chrono::high_resolution_clock;
 
 typedef pair<int, float> operand;

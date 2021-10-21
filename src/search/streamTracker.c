@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: Copyright Copyright 2021 Seoul National University
+//
+// SPDX-License-Identifier: MIT License
+
 //#define ORIGINALIMP
 #ifdef ORIGINALIMP
 class StreamTracker {

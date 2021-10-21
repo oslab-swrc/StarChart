@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: Copyright Copyright 2021 Seoul National University
+//
+// SPDX-License-Identifier: MIT License
+
 using phmap::flat_hash_map;
 using phmap::flat_hash_set;
 #include <cstdio>

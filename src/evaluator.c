@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: Copyright Copyright 2021 Seoul National University
+//
+// SPDX-License-Identifier: MIT License
 class Evaluator {
 public:
   string name;  

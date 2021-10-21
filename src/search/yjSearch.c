@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: Copyright Copyright 2021 Seoul National University
+//
+// SPDX-License-Identifier: MIT License
+
 #ifdef FIGUREOUR
 extern int nSearch_ = 1000;
 extern int K_ = -1;

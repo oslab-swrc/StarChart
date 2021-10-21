@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: Copyright Copyright 2021 Seoul National University
+//
+// SPDX-License-Identifier: MIT License
 using namespace std;
 
 #include <assert.h>
@@ -25,6 +28,6 @@ using namespace std;
 #include <dirent.h>
 #include <sys/types.h>
 #include "lib/parallel_hashmap/phmap.h"
-#include "helper.cc"
+#include "helper.c"
 using phmap::flat_hash_map;
 using phmap::flat_hash_set;

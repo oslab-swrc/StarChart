@@ -5,9 +5,10 @@ StarChart is a new graph-based similarity search algorithm for high-dimensional 
 
 We will update the source code of StarChart when our paper is published.
 
+StarChart has MIT license, `src/lib/parallel_hashmap` is the external library which has Apache License 2.0
 ### Requirement List
 1. Need dataset read wrapper for new dataset
-2. # of threads are now hardcoded.
+2. Hardcoded \# of threads to utilize
 
 ### How to run
 ```bash
@@ -16,4 +17,6 @@ make ssa
 ```
 
 ### Example output
+Recall and total latency(ms) are reported as output
+
 <img width="30%" src="example_output.png">

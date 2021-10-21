@@ -5,3 +5,11 @@ StarChart is a new graph-based similarity search algorithm for high-dimensional 
 
 We will update the source code of StarChart when our paper is published.
 
+### How to run
+```bash
+mkdir bin
+make ssa
+```
+
+### Example output
+<img width="30%" src="example_output.png">

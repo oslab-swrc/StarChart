@@ -4,10 +4,8 @@
 #include "search/graph.cc"
 #include "search/base.cc"
 #include "search/graphSearch.cc"
-#include "search/tjSearch.cc"
 #include "search/streamTracker.cc"
 #include "search/yjSearch.cc"
-#include "search/emulatedNIPS.cc"
 #include "manager.cc"
 #ifdef FALCONN
 #include "search/falconnSearch.cc"
@@ -103,7 +101,7 @@ int main (int argc, char** argv) {
   GraphSearch gs("GS", K, nSearch);
   // HnswSearch hnswgs("HNSW", K, nSearch);
   // GraphSearchYJBase gsyjb1("GSYJBase1", K, nSearch, load_front_M, 192, 256);
-  GraphSearchFinal gsf1("GSF1", K, nSearch, load_front_M);
+  // GraphSearchFinal gsf1("GSF1", K, nSearch, load_front_M);
   GraphSearchYJBase* gsyjb1[qN];
   for (int i = 0; i < qN; i++) 
     gsyjb1[i] = new GraphSearchYJBase("GSYJBase" + to_string(i), K, nSearch, load_front_M, 192, 256);
@@ -117,14 +115,14 @@ int main (int argc, char** argv) {
   cout << "Checks up to " << nSearch << " items \n";
   cout << "construct_fg_M : " << construct_fg_M << " / load_fg_M : " << load_fg_M << " / load_front_M : " << load_front_M << " / ingraph_num_node : " << ingraph_num_node << " / ingraph_M : " << ingraph_M << " / threashold : " << threshold << " / s_size : " << s_size << "\n";
 
- if(data_mode.find("-el") != string::npos)
-    manager.objs_register(1, &gsf1);
-  else if(data_mode.find("-ol") != string::npos) {
+ if(data_mode.find("-ol") != string::npos)
+    //manager.objs_register(1, &gsf1);
+  // else if(data_mode.find("-ol") != string::npos) {
     // manager.objs_register(1, &gsyjb1);
     for (int i = 0; i < qN; i++) {
       manager.objs_register_for_query_level_par(gsyjb1[i]);
     }
-  }
+  // }
   // else if(data_mode.find("-hl") != string::npos)
   //   manager.objs_register(1, &hnswgs);
 
@@ -215,7 +213,7 @@ int main (int argc, char** argv) {
   }
 
   if (data_mode.find("-el") != string::npos) {
-    gsf1.fg->graph = &fg;
+    // gsf1.fg->graph = &fg;
   }
   else if (data_mode.find("-ol") != string::npos) {
     for (int i = 0; i < qN; i++) {

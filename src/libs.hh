@@ -25,7 +25,6 @@ using namespace std;
 #include <dirent.h>
 #include <sys/types.h>
 #include "lib/parallel_hashmap/phmap.h"
-#include "lib/pop.h"
 #include "helper.cc"
 using phmap::flat_hash_map;
 using phmap::flat_hash_set;

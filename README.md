@@ -22,7 +22,7 @@ git clone https://github.com/greg7mdp/parallel-hashmap
 ```bash
 git clone https://github.com/oslab-swrc/StarChart
 cd StarChart
-cp <path to parallel-hashmap>/parallel-hashmap ./src/lib -r
+cp <path to parallel-hashmap>/parallel_hashmap ./src/lib -r
 mkdir bin
 make ssa
 ```

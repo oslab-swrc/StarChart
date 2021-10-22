@@ -3,11 +3,12 @@
 
 StarChart is a new graph-based similarity search algorithm for high-dimensional dataset. StarChart is an energy efficient algorithm that achieves lower query processing time and high throughput.
 
+StarChart has MIT license.
+
 <img width="70%" src="starchart.png">
 
 ### Requirement List
 1. Need dataset read wrapper for new dataset
-2. Hardcoded \# of threads to utilize
 
 ### How to Run
 **Set up external library for optimized exection**
@@ -29,6 +30,7 @@ make ssa
 ```bash
 ./bin/ssa -s -c <dataset name>
 ```
+Note that \# of threads is hardcoded in `src/manager.c`, please fix it according to your server
 
 ***Search***
 ```bash
@@ -46,6 +48,3 @@ Recall and total latency(ms) are reported as output
 `src/manager.c`: Manager maps multiple queries to all threads, manages query results
 
 `src/evaluator.c`: Evaluator runs/saves groundtruth and calculate recall for the queries
-
-### LICENSE
-StarChart has MIT license.

@@ -3,7 +3,7 @@
 
 StarChart is a new graph-based similarity search algorithm for high-dimensional dataset. StarChart is an energy efficient algorithm that achieves lower query processing time and high throughput.
 
-<img width="30%" src="starchart.png">
+<img width="70%" src="starchart.png">
 
 ### Requirement List
 1. Need dataset read wrapper for new dataset
